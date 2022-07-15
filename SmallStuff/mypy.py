@@ -1,0 +1,4 @@
+from bdb import GENERATOR_AND_COROUTINE_FLAGS
+
+
+class HollowKnight = GENERATOR_AND_COROUTINE_FLAGS
