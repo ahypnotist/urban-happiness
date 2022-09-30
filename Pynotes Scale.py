@@ -4,6 +4,7 @@ print("based on the number of tones and semitones added.")
 print("It doesnt really focus on the first and last note being repeated, or the octave")
 print("")
 
+#This thing decides if sharp or flat notes are displayed
 SoF = input("Do you want to use sharp notes or flat notes? ")
 if SoF == "SHARP" or SoF == "Sharp" or SoF == "sharp" or SoF == "#" :
     SoF = "#"
@@ -82,10 +83,14 @@ elif SoF == "b":
     elif cmajor[0] == "b":
         cmajor[0] == "B"
 
-if cmajor[0] != "A#" or cmajor[0] != "C#" or cmajor[0] != "D#" or cmajor[0] != "F#" or cmajor[0] != "G#":
+#so there was this problem with the noteline and natural notes
+#if it was a natural note, there wouldnt be any space, so it couldnt be equated with a noteline, like in puf
+#so it adds a space to a natural note
+
+
+if cmajor[0] == "A" or cmajor[0] == "B" or cmajor[0] == "C" or cmajor[0] == "D" or cmajor[0] == "E" or cmajor[0] == "F" or cmajor[0] == "G":
     cmajor[0] = cmajor[0] + " "
-elif cmajor[0] != "Bb" or cmajor[0] != "Db" or cmajor[0] != "Eb" or cmajor[0] != "Gb" or cmajor[0] != "Ab":
-    cmajor[0] = cmajor[0] + " "   
+    
 #this thing utilizes puf based on the note you chose
 found = cmajor[0]
 if found != 0 :
@@ -130,7 +135,6 @@ for f, b in zip(noteline, pointing):
 chord = []
 
 #i am sure there is a better way to do this
-
 c = 1
 
 for n in notesinscale:
